@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>نموذج تسجيل البيانات</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+min-height:100vh;
+
+padding:20px;
+
+}
+
+.card{
+
+background:#fff;
+
+width:100%;
+max-width:650px;
+
+border-radius:20px;
+
+padding:35px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+}
+
+.logo{
+
+text-align:center;
+font-size:60px;
+
+}
+
+h1{
+
+text-align:center;
+
+margin:10px 0;
+
+color:#0f172a;
+
+}
+
+p{
+
+text-align:center;
+
+color:#666;
+
+margin-bottom:30px;
+
+}
+
+label{
+
+display:block;
+
+font-weight:bold;
+
+margin-top:15px;
+
+margin-bottom:8px;
+
+}
+
+input,select{
+
+width:100%;
+
+padding:14px;
+
+border:1px solid #ccc;
+
+border-radius:10px;
+
+font-size:16px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+input:focus,
+select:focus{
+
+border-color:#2563eb;
+
+box-shadow:0 0 5px rgba(37,99,235,.4);
+
+}
+
+button{
+
+margin-top:30px;
+
+width:100%;
+
+padding:16px;
+
+font-size:18px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+background:#25D366;
+
+color:white;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#1da851;
+
+transform:scale(1.02);
+
+}
+
+.footer{
+
+margin-top:20px;
+
+text-align:center;
+
+font-size:14px;
+
+color:#888;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">
+📋
+</div>
+
+<h1>نموذج تسجيل البيانات</h1>
+
+<p>
+يرجى تعبئة جميع البيانات ثم الضغط على إرسال
+</p>
+
+<form id="myForm">
+
+<label>الاسم الرباعي</label>
+
+<input
+type="text"
+id="fullname"
+required>
+
+<label>تاريخ الميلاد</label>
+
+<input
+type="date"
+id="birthdate"
+required>
+
+<label>الجنس</label>
+
+<select id="gender" required>
+
+<option value="">اختر</option>
+
+<option>ذكر</option>
+
+<option>أنثى</option>
+
+</select>
+
+<label>الرقم المدني</label>
+
+<input
+type="text"
+id="civilid"
+required>
+
+<label>رقم الهاتف</label>
+
+<input
+type="tel"
+id="phone"
+required>
+
+<label>الجنسية</label>
+
+<input
+type="text"
+id="nationality"
+required>
+
+
+<label>التصنيف الرياضي</label>
+
+<select id="sporttype" required>
+
+<option value="">اختر</option>
+
+<option>هاوي</option>
+
+<option>لاعب</option>
+
+</select>
+
+
+<button type="submit">
+
+📲 إرسال عبر واتساب
+
+</button>
+
+</form>
+
+<div class="footer">
+
+شكراً لتعبئة النموذج
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("myForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let fullname=document.getElementById("fullname").value;
+let birthdate=document.getElementById("birthdate").value;
+let gender=document.getElementById("gender").value;
+let civilid=document.getElementById("civilid").value;
+let phone=document.getElementById("phone").value;
+let nationality=document.getElementById("nationality").value;
+let sporttype=document.getElementById("sporttype").value;
+
+let message=
+`السلام عليكم،
+
+تم تعبئة نموذج البيانات:
+
+👤 الاسم:
+${fullname}
+
+🎂 تاريخ الميلاد:
+${birthdate}
+
+⚧ الجنس:
+${gender}
+
+🪪 الرقم المدني:
+${civilid}
+
+📞 رقم الهاتف:
+${phone}
+
+🌍 الجنسية:
+${nationality}`;
+
+⚧ التصنيف الرياضي:
+${sporttype}
+
+let whatsapp="https://wa.me/96599408471?text="+encodeURIComponent(message);
+
+window.open(whatsapp,"_blank");
+
+});
+
+</script>
+
+</body>
+</html>
