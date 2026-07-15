@@ -225,6 +225,20 @@ type="text"
 id="nationality"
 required>
 
+
+<label>التصنيف الرياضي</label>
+
+<select id="sporttype" required>
+
+<option value="">اختر</option>
+
+<option>هاوي</option>
+
+<option>لاعب</option>
+
+</select>
+
+
 <button type="submit">
 
 📲 إرسال عبر واتساب
@@ -253,6 +267,7 @@ let gender=document.getElementById("gender").value;
 let civilid=document.getElementById("civilid").value;
 let phone=document.getElementById("phone").value;
 let nationality=document.getElementById("nationality").value;
+let sporttype=document.getElementById("sporttype").value;
 
 let message=
 `السلام عليكم،
@@ -276,6 +291,9 @@ ${phone}
 
 🌍 الجنسية:
 ${nationality}`;
+
+⚧ التصنيف الرياضي:
+${sporttype}
 
 let whatsapp="https://wa.me/96599408471?text="+encodeURIComponent(message);
 
